@@ -428,38 +428,44 @@ footer {
     left: 0;
 }
 
-/* Alignement horizontal des blocs de maths */
+/* Alignement horizontal strict pour les blocs de maths */
 .math-container {
     display: flex;
-    flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
-    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
     margin-top: 15px;
+    width: 100%;
 }
 
 .math-block {
-    flex: 1; /* Donne la même largeur à chaque colonne */
-    min-width: 200px; /* Largeur minimum avant de passer à la ligne */
+    flex: 1; /* Force les 3 colonnes à diviser l'espace en 3 parts égales */
+    min-width: 0; /* Empêche les colonnes de déborder */
 }
 
 .math-block h5 {
     color: var(--primary-blue);
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-size: 0.85rem; /* Police plus petite pour le titre */
     border-bottom: 1px solid #333;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
+    white-space: nowrap; /* Empêche le titre de la colonne de passer sur 2 lignes */
 }
 
 .math-block ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .math-block li {
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+    font-size: 0.75rem; /* Police réduite pour faire tenir les longs intitulés */
+    line-height: 1.2;
+    margin-bottom: 4px;
     color: var(--text-muted);
     position: relative;
-    padding-left: 12px;
+    padding-left: 10px;
+    word-wrap: break-word; /* Coupe les mots si vraiment trop longs */
 }
 
 .math-block li::before {
@@ -467,4 +473,11 @@ footer {
     color: var(--primary-blue);
     position: absolute;
     left: 0;
+}
+
+/* Ajustement pour les petits écrans (Tablettes/Mobiles) */
+@media (max-width: 768px) {
+    .math-container {
+        flex-direction: column; /* Repasse en vertical sur mobile pour rester lisible */
+    }
 }
