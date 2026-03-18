@@ -247,7 +247,8 @@ footer {
 
 /* Ajustement des logos dans la timeline */
 .timeline-icon img {
-    max-width: 80%; /* L'image prend 80% de la largeur du cercle */
-    max-height: 80%; /* L'image prend 80% de la hauteur du cercle */
-    object-fit: contain; /* L'image garde ses proportions sans être déformée */
+    width: 100%;       /* Forcer la largeur totale */
+    height: 100%;      /* Forcer la hauteur totale */
+    object-fit: cover;  /* Remplir le cercle, quitte à couper un peu les bords blancs */
+    border-radius: 50%; /* Garder le logo rond pour épouser le cercle */
 }
