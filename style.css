@@ -1,0 +1,246 @@
+/* Variables de couleurs pour correspondre au design */
+:root {
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --primary-blue: #007bff;
+    --text-main: #333333;
+    --text-muted: #6c757d;
+    --blue-tag-bg: #e7f1ff;
+    --blue-tag-text: #0d6efd;
+    --yellow-tag-bg: #fff3cd;
+    --yellow-tag-text: #856404;
+    --footer-bg: #1a1e23;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.top-nav {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.top-nav a:hover, .top-nav a.active {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+
+/* Layout principal */
+main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.subsection-title {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Cartes génériques */
+.card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+/* Timeline Expérience */
+.timeline {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e9ecef;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -3.3rem; /* Ajustement par rapport à la ligne */
+    top: 1rem;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.timeline-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.meta-info .company {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.timeline-item ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Grille de compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Système de Badges (Tags) */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.tag-blue {
+    background-color: var(--blue-tag-bg);
+    color: var(--blue-tag-text);
+}
+
+.tag-yellow {
+    background-color: var(--yellow-tag-bg);
+    color: var(--yellow-tag-text);
+    border: 1px solid #ffeeba;
+}
+
+/* Footer et Bouton Flottant */
+footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 1.5rem 2rem;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-blue);
+}
+
+.fab-download {
+    position: absolute;
+    right: 2rem;
+    top: -25px;
+    background-color: var(--primary-blue);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    transition: transform 0.2s;
+}
+
+.fab-download:hover {
+    transform: translateY(-3px);
+}
