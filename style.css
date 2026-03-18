@@ -628,7 +628,7 @@ footer {
 
 /* Empêche le titre d'être caché sous la barre de navigation */
 section {
-    scroll-margin-top: 200px;
+    scroll-margin-top: 150px;
 }
 
 /* --- RESPONSIVE DESIGN (MOBILE & TABLETTE) --- */
