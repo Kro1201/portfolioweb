@@ -709,3 +709,20 @@ section {
         right: 20px;
     }
 }
+
+/* Cache toutes les sections par défaut */
+main section {
+    display: none;
+    animation: fadeIn 0.5s; /* Petit effet d'apparition fluide */
+}
+
+/* Affiche uniquement la section qui a la classe .active-section */
+main section.active-section {
+    display: block;
+}
+
+/* Animation optionnelle */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
