@@ -1,15 +1,15 @@
 /* Variables de couleurs pour correspondre au design */
 :root {
-    --bg-color: #f5f7fa;
-    --card-bg: #ffffff;
-    --primary-blue: #007bff;
-    --text-main: #333333;
-    --text-muted: #6c757d;
-    --blue-tag-bg: #e7f1ff;
-    --blue-tag-text: #0d6efd;
-    --yellow-tag-bg: #fff3cd;
-    --yellow-tag-text: #856404;
-    --footer-bg: #1a1e23;
+    --bg-color: #121212;        /* Fond de la page (noir très sombre) */
+    --card-bg: #1e1e1e;         /* Fond des cartes (gris anthracite) */
+    --primary-blue: #3498db;    /* Bleu plus lumineux pour le contraste */
+    --text-main: #e0e0e0;       /* Texte principal (gris très clair) */
+    --text-muted: #a0a0a0;     /* Texte secondaire (gris moyen) */
+    --blue-tag-bg: #1a3a5a;     /* Fond des badges bleus plus sombre */
+    --blue-tag-text: #81b9ff;   /* Texte des badges bleus plus clair */
+    --yellow-tag-bg: #332b00;   /* Fond des badges jaunes plus sombre */
+    --yellow-tag-text: #ffd54f; /* Texte des badges jaunes plus clair */
+    --footer-bg: #0a0a0a;       /* Pied de page presque noir */
 }
 
 body {
