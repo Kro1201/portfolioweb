@@ -631,120 +631,99 @@ section {
     scroll-margin-top: 150px;
 }
 
-/* --- RESPONSIVE DESIGN (MOBILE & TABLETTE) --- */
+/* --- 1. RÈGLES GÉNÉRALES (Toutes versions) --- */
+main section {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
 
+main section.active-section {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 2. RESPONSIVE DESIGN (MOBILE) --- */
 @media (max-width: 768px) {
-    /* 1. La Bannière (Hero) */
+    /* RESET CRITIQUE : On force le body et main à ne pas déborder */
+    body, html {
+        overflow-x: hidden; /* Empêche le scroll horizontal */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 1. La Bannière */
     .hero-container {
-        flex-direction: column; /* Photo au-dessus du texte */
+        flex-direction: column;
         text-align: center;
         gap: 20px;
-        padding: 20px 0;
+        padding: 20px;
     }
 
     .hero-photo img {
-        width: 140px; /* Photo un peu plus petite sur mobile */
-        height: 140px;
-    }
-
-    .hero-text h1 {
-        font-size: 1.8rem; /* Titre plus petit */
-    }
-
-    .hero-contact {
-        flex-direction: column; /* Contacts les uns sous les autres */
-        gap: 10px;
-        align-items: center;
-    }
-
-    .hero-links {
-        justify-content: center;
+        width: 120px;
+        height: 120px;
     }
 
     /* 2. La Navigation */
     .top-nav ul {
-        flex-wrap: wrap; /* Permet au menu de passer sur 2 lignes si besoin */
+        flex-wrap: wrap;
         justify-content: center;
-        padding: 10px;
+        padding: 5px;
     }
 
-    .top-nav a {
-        font-size: 0.85rem;
-        padding: 8px 10px;
-    }
-
-    /* 3. Les Grilles (Skills & Math) */
-    .technical-skills-grid, 
-    .soft-skills-grid, 
-    .math-container {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        flex-direction: column;
-    }
-
-    .math-block {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    /* 4. Timeline (Expériences & Éducation) - NETTOYAGE TOTAL */
+    /* 3. Timeline & Cartes (Le correctif du décalage) */
     .timeline {
-        padding: 0 !important;
+        padding: 0 10px !important;
         margin: 0 !important;
         width: 100% !important;
     }
 
     .timeline-item {
-        display: flex !important;
-        flex-direction: column !important;
         width: 100% !important;
-        padding-left: 40px !important; /* Espace pour la ligne et le logo */
-        padding-right: 10px !important;
+        padding-left: 35px !important; /* Espace réduit pour la ligne */
+        padding-right: 0 !important;
         margin: 0 0 20px 0 !important;
-        position: relative !important;
         box-sizing: border-box !important;
     }
 
     .timeline::before {
-        left: 15px !important; /* La ligne verticale */
+        left: 10px !important; /* On colle la ligne au bord gauche */
     }
 
     .timeline-icon {
-        left: 0 !important;
-        margin-left: 0 !important;
-        transform: none !important; /* Annule d'éventuels centrages JS/CSS */
+        left: -5px !important; /* Aligne le logo sur la ligne décalée */
+        width: 30px;
+        height: 30px;
     }
 
     .card {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
+        padding: 15px !important;
         left: 0 !important;
         transform: none !important;
         box-sizing: border-box !important;
+        /* Supprime les ombres ou bordures qui pourraient pousser l'élément */
     }
 
-    /* 5. Le bouton Download CV */
+    /* 4. Grilles */
+    .technical-skills-grid, .math-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px;
+    }
+
+    /* 5. Bouton CV */
     .download-cv-fab {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
     }
-}
-
-/* Cache toutes les sections par défaut */
-main section {
-    display: none;
-    animation: fadeIn 0.5s; /* Petit effet d'apparition fluide */
-}
-
-/* Affiche uniquement la section qui a la classe .active-section */
-main section.active-section {
-    display: block;
-}
-
-/* Animation optionnelle */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
