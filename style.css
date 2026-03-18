@@ -528,25 +528,14 @@ footer {
     color: var(--text-muted);
 }
 
-/* Style pour les liens des diplômes */
-.education-link {
-    text-decoration: none; /* Enlève le soulignement */
-    color: inherit; /* Garde la couleur blanche du titre */
-    transition: color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+/* Force la couleur des liens, même visités */
+.education-link, 
+.education-link:visited {
+    color: #ffffff; /* Force le blanc pur */
+    text-decoration: none; /* Enlève le soulignement violet/bleu */
 }
 
 .education-link:hover {
-    color: var(--primary-blue); /* Devient bleu au survol */
-}
-
-.education-link i {
-    font-size: 0.8rem; /* Petite icône discrète */
-    opacity: 0.6;
-}
-
-.education-link:hover i {
-    opacity: 1;
+    color: var(--primary-blue) !important; /* Devient bleu au passage de la souris */
+    text-decoration: underline; /* Optionnel : souligne au survol pour l'ergonomie */
 }
