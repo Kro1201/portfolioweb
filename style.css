@@ -527,3 +527,26 @@ footer {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+
+/* Style pour les liens des diplômes */
+.education-link {
+    text-decoration: none; /* Enlève le soulignement */
+    color: inherit; /* Garde la couleur blanche du titre */
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.education-link:hover {
+    color: var(--primary-blue); /* Devient bleu au survol */
+}
+
+.education-link i {
+    font-size: 0.8rem; /* Petite icône discrète */
+    opacity: 0.6;
+}
+
+.education-link:hover i {
+    opacity: 1;
+}
