@@ -686,19 +686,35 @@ section {
         margin-bottom: 15px;
     }
 
-    /* 4. Timeline (Expériences & Éducation) */
+    /* 4. Timeline (Expériences & Éducation) - AJUSTÉ */
+    .timeline {
+        padding: 0 10px; /* On réduit les marges globales de la section */
+        margin-left: 0;
+    }
+
     .timeline::before {
-        left: 20px; /* Décale la barre verticale à gauche */
+        left: 15px; /* On colle la ligne bien à gauche */
     }
 
     .timeline-item {
-        padding-left: 45px; /* Laisse de la place pour le logo à gauche */
+        width: 100% !important; /* Force la carte à prendre toute la largeur */
+        padding-left: 40px; /* Espace pour le logo */
+        padding-right: 0;
+        margin-left: 0;
     }
 
     .timeline-icon {
-        left: 5px; /* Aligne le logo sur la barre à gauche */
+        left: 0px; /* Aligne le logo sur la ligne */
         width: 30px;
         height: 30px;
+        top: 0; /* Aligne le logo avec le haut du titre */
+    }
+
+    .card {
+        width: 100% !important; /* Essentiel : la carte doit occuper l'espace restant */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box; /* Évite que le padding ne fasse déborder la carte */
     }
 
     /* 5. Le bouton Download CV */
