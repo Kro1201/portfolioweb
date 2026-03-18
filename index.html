@@ -12,6 +12,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+    <script>
+    function showSection(sectionId) {
+        // 1. Cache toutes les sections
+        const sections = document.querySelectorAll('main section');
+        sections.forEach(sec => {
+            sec.classList.remove('active-section');
+        });
+
+        // 2. Affiche la section demandée
+        const targetSection = document.querySelector(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active-section');
+        }
+
+        // 3. Met à jour le style du menu (soulignement bleu)
+        const navLinks = document.querySelectorAll('.top-nav a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === sectionId) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Gérer le clic sur les liens du menu
+    document.querySelectorAll('.top-nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le scroll automatique
+            const sectionId = this.getAttribute('href');
+            showSection(sectionId);
+            
+            // Optionnel : change l'URL sans recharger la page
+            window.history.pushState(null, null, sectionId);
+        });
+    });
+
+    // Afficher la section "Experience" (ou Work History) par défaut au chargement
+    window.addEventListener('DOMContentLoaded', () => {
+        // Si l'URL a déjà un hash (ex: #skills), on l'affiche, sinon Experience
+        const hash = window.location.hash || '#experience';
+        showSection(hash);
+    });
+</script>
 <body>
     <header class="hero-banner">
         <div class="hero-container">
