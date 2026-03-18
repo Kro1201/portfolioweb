@@ -252,3 +252,75 @@ footer {
     object-fit: cover;  /* Remplir le cercle, quitte à couper un peu les bords blancs */
     border-radius: 50%; /* Garder le logo rond pour épouser le cercle */
 }
+
+/* Grille pour les Soft Skills */
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.soft-skill-card {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    transition: transform 0.2s;
+}
+
+.soft-skill-card i {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+}
+
+.soft-skill-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Grille pour les Langues */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.language-card {
+    padding: 1.2rem;
+}
+
+.lang-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.flag { font-size: 1.2rem; }
+.lang-name { font-weight: 600; flex-grow: 1; }
+.lang-level { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Barres de progression */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #333; /* Fond sombre de la barre */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+}
+
+/* Effet au survol des cartes */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
