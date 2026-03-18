@@ -244,3 +244,10 @@ footer {
 .fab-download:hover {
     transform: translateY(-3px);
 }
+
+/* Ajustement des logos dans la timeline */
+.timeline-icon img {
+    max-width: 80%; /* L'image prend 80% de la largeur du cercle */
+    max-height: 80%; /* L'image prend 80% de la hauteur du cercle */
+    object-fit: contain; /* L'image garde ses proportions sans être déformée */
+}
