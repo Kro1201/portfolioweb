@@ -628,5 +628,84 @@ footer {
 
 /* Empêche le titre d'être caché sous la barre de navigation */
 section {
-    scroll-margin-top: 130px; /* Ajustez ce nombre selon la hauteur de votre nav + un petit espace */
+    scroll-margin-top: 200px;
+}
+
+/* --- RESPONSIVE DESIGN (MOBILE & TABLETTE) --- */
+
+@media (max-width: 768px) {
+    /* 1. La Bannière (Hero) */
+    .hero-container {
+        flex-direction: column; /* Photo au-dessus du texte */
+        text-align: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .hero-photo img {
+        width: 140px; /* Photo un peu plus petite sur mobile */
+        height: 140px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Titre plus petit */
+    }
+
+    .hero-contact {
+        flex-direction: column; /* Contacts les uns sous les autres */
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero-links {
+        justify-content: center;
+    }
+
+    /* 2. La Navigation */
+    .top-nav ul {
+        flex-wrap: wrap; /* Permet au menu de passer sur 2 lignes si besoin */
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .top-nav a {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    /* 3. Les Grilles (Skills & Math) */
+    .technical-skills-grid, 
+    .soft-skills-grid, 
+    .math-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        flex-direction: column;
+    }
+
+    .math-block {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* 4. Timeline (Expériences & Éducation) */
+    .timeline::before {
+        left: 20px; /* Décale la barre verticale à gauche */
+    }
+
+    .timeline-item {
+        padding-left: 45px; /* Laisse de la place pour le logo à gauche */
+    }
+
+    .timeline-icon {
+        left: 5px; /* Aligne le logo sur la barre à gauche */
+        width: 30px;
+        height: 30px;
+    }
+
+    /* 5. Le bouton Download CV */
+    .download-cv-fab {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
 }
