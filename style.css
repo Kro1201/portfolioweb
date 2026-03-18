@@ -481,3 +481,49 @@ footer {
         flex-direction: column; /* Repasse en vertical sur mobile pour rester lisible */
     }
 }
+
+/* Style pour la section Mémoire */
+.thesis-container {
+    display: flex;
+    justify-content: space-between; /* Pousse l'icône à droite */
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.2); /* Ligne subtile bleue */
+}
+
+.thesis-content {
+    display: flex;
+    gap: 10px; /* Espace entre le label et le titre */
+    flex-wrap: wrap; /* Permet au titre de passer en dessous sur petit écran */
+}
+
+.thesis-label {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.thesis-title {
+    color: var(--text-main);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.thesis-download {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.thesis-download:hover {
+    transform: scale(1.2);
+    color: #e74c3c; /* Change en rouge au survol pour rappeler le PDF */
+}
+
+.thesis-description {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
