@@ -11,6 +11,92 @@
     --yellow-tag-text: #ffd54f; /* Texte des badges jaunes plus clair */
     --footer-bg: #0a0a0a;       /* Pied de page presque noir */
 }
+/* Bannière Hero */
+.hero-banner {
+    background-color: #0a0e14; /* Fond noir profond */
+    background-image: url('https://www.transparenttextures.com/patterns/constellation.png'); /* Effet réseau de points */
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: #cbd5e0;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #a0aec0;
+}
+
+.hero-contact i, .hero-links i {
+    color: #3498db; /* Bleu pour les icônes */
+}
+
+.hero-links {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.hero-links a:hover {
+    color: #3498db;
+}
+
+/* Adaptabilité Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-contact {
+        justify-content: center;
+    }
+    .hero-links {
+        justify-content: center;
+    }
+}
 
 body {
     font-family: 'Inter', sans-serif;
