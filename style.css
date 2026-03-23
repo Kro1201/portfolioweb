@@ -718,3 +718,99 @@ main section.active-section {
         right: 15px;
     }
 }
+
+/* --- SECTION PROJETS : EFFET DE SURVOL --- */
+
+.project-card {
+    position: relative;
+    overflow: hidden; /* Coupe ce qui dépasse pour la surcouche */
+    display: flex;
+    flex-direction: column;
+    min-height: 220px; /* Assure assez de place pour le texte au survol */
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fond très sombre (noir du site) avec 95% d'opacité */
+    background-color: rgba(18, 18, 18, 0.95); 
+    padding: 1.5rem;
+    box-sizing: border-box;
+    
+    /* Animation fluide */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Déclencheur : affiche la surcouche quand la souris est sur la carte */
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h4 {
+    color: var(--primary-blue);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-overlay ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.project-overlay li {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.project-overlay li::before {
+    content: "▹"; /* Petite flèche discrète */
+    color: var(--primary-blue);
+    position: absolute;
+    left: 0;
+}
+
+/* Bouton optionnel dans l'overlay pour aller voir le code */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: auto;
+    transition: background-color 0.2s;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+    color: white;
+}
